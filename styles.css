@@ -1,0 +1,266 @@
+/* # Front-end Style Guide
+
+## Layout
+
+The designs were created to the following widths:
+
+- Mobile: 375px
+- Desktop: 1440px
+
+## Colors
+
+### Primary
+
+- Desaturated Red: hsl(0, 36%, 70%)
+- Soft Red: hsl(0, 93%, 68%)
+
+### Neutral
+
+- Dark Grayish Red: hsl(0, 6%, 24%)
+
+### Gradients
+
+- Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+- Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%)
+
+## Typography
+
+### Body Copy
+
+- Font size: 16px
+
+### Font
+
+- Family: [Josefin Sans](https://fonts.google.com/specimen/Josefin+Sans)
+- Weights: 300, 400, 600
+ */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+section {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  position: relative;
+}
+
+section .contentBx {
+  padding: 0 40px;
+  width: 58%;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 450px;
+}
+
+section .contentBx .logo {
+  margin-bottom: 135px;
+  margin-top: 60px;
+}
+
+section .img-mobile img {
+  width: calc(100% + 40px);
+  margin-left: -20px;
+  margin-right: -20px;
+  display: none;
+}
+
+section .contentBx .content h1 {
+  color: hsl(0, 6%, 24%);
+  text-transform: uppercase;
+  font-size: 65px;
+  letter-spacing: 17px;
+  margin-bottom: 40px;
+}
+
+section .contentBx .content h1 span {
+  color: hsl(0, 36%, 70%);
+  font-weight: 300;
+}
+
+section .contentBx .content p {
+  font-weight: 400;
+  color: hsl(0, 36%, 70%);
+  line-height: 1.7;
+  margin-bottom: 50px;
+}
+
+section .contentBx .form-content {
+  width: 100%;
+  position: relative;
+}
+
+#email {
+  width: 100%;
+  padding: 20px 35px;
+  height: 60px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 16px;
+  border: 1px solid hsl(0, 36%, 70%);
+  color: hsl(0, 6%, 24%);
+  border-radius: 50px;
+  outline: none;
+}
+
+#email.danger {
+  border: 2px solid hsl(0, 93%, 68%);
+}
+
+section .contentBx .form-content .icon {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 30px;
+  right: 100px;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+section .contentBx .form-content .icon.danger {
+  display: flex;
+}
+
+section .contentBx .form-content .text {
+  padding: 10px 0 0 35px;
+  color: hsl(0, 93%, 68%);
+  font-size: 14px;
+}
+
+section .contentBx .form-content button {
+  background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  border-radius: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  cursor: pointer;
+  height: 60px;
+  width: 100px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.1s;
+}
+
+section .contentBx .form-content button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  background: linear-gradient(
+    135deg,
+    hsla(0, 80%, 100%, 0.575),
+    hsla(0, 100%, 98%, 0.301)
+  );
+  display: none;
+}
+
+section .contentBx .form-content button:hover {
+  box-shadow: 0 5px 15px hsl(0, 36%, 70%);
+}
+
+section .contentBx .form-content button:hover:before {
+  display: block;
+}
+
+section .contentBx .form-content button:focus {
+  outline: none;
+}
+
+section .contentBx .form-content button:active {
+  box-shadow: none;
+}
+
+section .imgBx {
+  background-image: url('/images/hero-desktop.jpg');
+  background-position: center;
+  background-size: cover;
+  width: 42%;
+}
+
+/* Footer */
+
+section .attribution {
+  font-size: 11px;
+  text-align: center;
+}
+section .attribution a {
+  color: hsl(228, 45%, 44%);
+}
+section .attribution {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px 0;
+  text-align: center;
+  transition: 0.3s;
+  z-index: 3;
+  opacity: 0;
+}
+
+section .attribution:hover {
+  opacity: 1;
+}
+
+section .attribution a {
+  text-decoration: none;
+}
+
+/* Media */
+
+@media only screen and (max-width: 768px) {
+  section .imgBx {
+    display: none;
+  }
+
+  section .contentBx .logo {
+    margin-bottom: 60px;
+  }
+
+  section .contentBx {
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  section .contentBx .container {
+    padding-bottom: 60px;
+    max-width: 100%;
+  }
+
+  section .img-mobile img {
+    display: block;
+  }
+  section .contentBx .content h1 {
+    margin-top: 100px;
+    font-size: 50px;
+  }
+
+  section .contentBx .content h1,
+  section .contentBx .content p {
+    text-align: center;
+  }
+
+  section .contentBx .form-content button {
+    width: 75px;
+  }
+
+  section .contentBx .form-content .icon {
+    right: 70px;
+  }
+}
