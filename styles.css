@@ -70,9 +70,9 @@ section .contentBx .logo {
 }
 
 section .img-mobile img {
-  width: calc(100% + 40px);
-  margin-left: -20px;
-  margin-right: -20px;
+  width: calc(100% + 60px);
+  margin-left: -30px;
+  margin-right: -30px;
   display: none;
 }
 
@@ -235,7 +235,7 @@ section .attribution a {
 
   section .contentBx {
     width: 100%;
-    padding: 0 20px;
+    padding: 0 30px;
   }
 
   section .contentBx .container {
